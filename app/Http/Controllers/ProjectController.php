@@ -40,8 +40,8 @@ class ProjectController extends Controller
             "description" => "required|min:10|max:200",
             "creation_date" => "required|date",
         ]);
+        
         $newProject = new Project();
-        $newProject->is_completed=false;
         $newProject->fill($data);
         dump($data);
         

@@ -3,7 +3,7 @@
 @section('content')
     <h1>Project</h1>
 
-    @section('content')
+@section('content')
     <h1>Projects</h1>
 
     <div class="row">
@@ -14,7 +14,17 @@
                     <div class="card-body">
                         <h3 class="card-title">{{ $progetti->name }}</h3>
                         <p class="card-text">{{ $progetti->description }}</p>
-                        <p class="card-text"><small class="text-muted">Creation date: {{ $progetti->creation_date }}</small></p>
+                        <p class="card-text"><small class="text-muted">Creation date: {{ $progetti->creation_date }}</small>
+                        </p>
+                        {{-- <div class="card-footer text-center">
+                            <a href="{{ route('games.show', $gioco->id) }}" class="btn btn-primary">Vai ai dettagli</a>
+                            <a href="{{ route('games.edit', $gioco->id) }}" class="btn btn-warning">Modifica</a>
+                            <form action="{{ route('games.destroy', $gioco->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Delete</a>
+                            </form>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -22,7 +32,7 @@
     </div>
 @endsection
 
-   {{--  @foreach ($catalogo as $progetti)
+{{--  @foreach ($catalogo as $progetti)
         <div class="row">
             <div class="card">
                 <img src="{{ $progetti->cover_image }}" alt="" class="card-img-top">

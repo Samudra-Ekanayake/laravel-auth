@@ -14,12 +14,12 @@ class ProjectsTableSeeder extends Seeder
      */
     public function run(Faker $faker): void
     {
-        $newProject = new Project();
+       /*  $newProject = new Project();
         $newProject->name = "e-commerce";
         $newProject->description = "un bellissimo sito di e-commerce per compare cose belle";
         $newProject->creation_date = "2024-05-03";
         $newProject->cover_image = "https://picsum.photos/id/" . $faker->numberBetween(1, 700) . "/1920/1080";
-        $newProject->save();
+        $newProject->save(); */
 
         for ($i = 0; $i < 10; $i++) {
 

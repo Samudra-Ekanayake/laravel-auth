@@ -40,7 +40,7 @@ class ProjectController extends Controller
             "description" => "required|min:10|max:200",
             "creation_date" => "required|date",
         ]);
-        
+
         $newProject = new Project();
         $newProject->fill($data);
         dump($data);
@@ -93,6 +93,7 @@ class ProjectController extends Controller
     public function destroy(Project $project)
     {
         $project->delete();
+
         return redirect()->route('project.index');
     }
 }

@@ -16,15 +16,15 @@
                         <p class="card-text">{{ $progetti->description }}</p>
                         <p class="card-text"><small class="text-muted">Creation date: {{ $progetti->creation_date }}</small>
                         </p>
-                        {{-- <div class="card-footer text-center">
-                            <a href="{{ route('games.show', $gioco->id) }}" class="btn btn-primary">Vai ai dettagli</a>
-                            <a href="{{ route('games.edit', $gioco->id) }}" class="btn btn-warning">Modifica</a>
-                            <form action="{{ route('games.destroy', $gioco->id) }}" method="POST">
+                         <div class="card-footer d-flex justify-content-between">
+                            <a href="{{ route('project.show', $progetti->id) }}" class="btn btn-primary">Vai ai dettagli</a>
+                            <a href="{{ route('project.edit', $progetti->id) }}" class="btn btn-warning">Modifica</a>
+                            <form action="{{ route('project.destroy', $progetti->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Delete</a>
+                                <button type="submit" class="btn btn-danger">Cancella</a>
                             </form>
-                        </div> --}}
+                        </div> 
                     </div>
                 </div>
             </div>

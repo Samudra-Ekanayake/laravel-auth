@@ -16,7 +16,7 @@
                         <p class="card-text">{{ $progetti->description }}</p>
                         <p class="card-text"><small class="text-muted">Creation date: {{ $progetti->creation_date }}</small>
                         </p>
-                         <div class="card-footer d-flex justify-content-between">
+                         <div class="card-footer d-flex justify-content-between p-0">
                             <a href="{{ route('project.show', $progetti->id) }}" class="btn btn-primary">Vai ai dettagli</a>
                             <a href="{{ route('project.edit', $progetti->id) }}" class="btn btn-warning">Modifica</a>
                             <form action="{{ route('project.destroy', $progetti->id) }}" method="POST">

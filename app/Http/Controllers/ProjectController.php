@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 use Illuminate\Http\Request;
-use App\Models\Type;
+use App\Models\Category;
 
 class ProjectController extends Controller
 {
@@ -56,7 +56,7 @@ class ProjectController extends Controller
     public function show(Project $project)
     {
         // Eager load della relazione 'type'
-        /* $project->load('type'); */
+        /* $project->load('category'); */
         $data = [
             'project' => $project,
         ];

@@ -36,7 +36,10 @@ class TypeController extends Controller
      */
     public function show(Type $type)
     {
-        //
+        $data = [
+            'type' => $type,
+        ];
+        return view('category.show', $data);
     }
 
     /**

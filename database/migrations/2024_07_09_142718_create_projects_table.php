@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            //creazione colonne tabella 
+            $table->foreignId('type_id')->constrained();
             $table->string("name");
             $table->string("description");
             $table->date("creation_date");

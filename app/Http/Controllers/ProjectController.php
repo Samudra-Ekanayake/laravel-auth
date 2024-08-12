@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 use Illuminate\Http\Request;
+use App\Models\Type;
 
 class ProjectController extends Controller
 {
@@ -39,12 +40,13 @@ class ProjectController extends Controller
             "name" => "required|min:5|max:50",
             "description" => "required|min:10|max:200",
             "creation_date" => "required|date",
+            "type_id" => "required|exists:types,id", // Verifica che il type_id esista nella tabella types
         ]);
 
         $newProject = new Project();
         $newProject->fill($data);
         dump($data);
-        
+
         $newProject->save();
         return redirect()->route('project.show', ['project' => $newProject]);
     }
@@ -53,6 +55,8 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
+        // Eager load della relazione 'type'
+        /* $project->load('type'); */
         $data = [
             'project' => $project,
         ];
@@ -77,13 +81,13 @@ class ProjectController extends Controller
     {
         $data = $request->all();
 
-        $project->name= $data['name'];
-        $project->description= $data['description'];
-        $project->creation_date= $data['creation_date'];
+        $project->name = $data['name'];
+        $project->description = $data['description'];
+        $project->creation_date = $data['creation_date'];
 
         $project->save();
 
-        return redirect()->route('project.show', ['project'=> $project] );
+        return redirect()->route('project.show', ['project' => $project]);
     }
 
 

@@ -28,6 +28,7 @@ class ProjectsTableSeeder extends Seeder
             $newProject->description = $faker->paragraph(1);
             $newProject->creation_date = $faker->dateTimeBetween('-2 years', 'now');
             $newProject->cover_image = "https://picsum.photos/id/" . $faker->numberBetween(1, 700) . "/1920/1080";
+            $newProject->type_id = $faker->numberBetween(1, 4);
             $newProject->save();
 
         }

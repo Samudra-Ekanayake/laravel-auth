@@ -14,4 +14,10 @@ class Project extends Model
         "description",
         "creation_date",
     ];
+
+     //Tutti i Project avranno un metodo che restituisce il tipo a cui appartengono
+     public function type()
+     {
+         return $this->belongsTo(Type::class);
+     }
 }

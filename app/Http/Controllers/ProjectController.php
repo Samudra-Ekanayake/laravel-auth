@@ -40,7 +40,7 @@ class ProjectController extends Controller
             "name" => "required|min:5|max:50",
             "description" => "required|min:10|max:200",
             "creation_date" => "required|date",
-            "type_id" => "required|exists:types,id", // Verifica che il type_id esista nella tabella types
+            "category_id" => "required|exists:category,id", // Verifica che il type_id esista nella tabella types
         ]);
 
         $newProject = new Project();

@@ -16,7 +16,7 @@ class Project extends Model
     ];
 
      //Tutti i Project avranno un metodo che restituisce il tipo a cui appartengono
-     public function type()
+     public function projectCategory()
      {
          return $this->belongsTo(Category::class);
      }

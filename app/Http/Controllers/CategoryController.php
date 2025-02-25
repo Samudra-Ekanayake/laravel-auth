@@ -37,7 +37,7 @@ class CategoryController extends Controller
     public function show(Category $Category)
     {
         $data = [
-            'Category' => $Category,
+            'Type' => $Category,
         ];
         return view('category.show', $data);
     }
